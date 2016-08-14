@@ -64,10 +64,6 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-	var identity = function identity(value) {
-	  return value;
-	};
-
 	var nullReducer = function nullReducer(state) {
 	  return typeof state === 'undefined' ? null : state;
 	};
@@ -77,12 +73,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * Specify a list of action types to whitelist actions for mapping.
 	 *
 	 * mapAction(
-	 *   actionMapper: ?((action: Object) => newAction: Object) = (x) => x,
+	 *   actionMapper: (action: Object) => newAction: Object,
 	 *   actionTypes: ?Array<string>
 	 * ): (reducer) => reducer
 	 */
-	var mapAction = function mapAction() {
-	  var actionMapper = arguments.length <= 0 || arguments[0] === undefined ? identity : arguments[0];
+	var mapAction = function mapAction(actionMapper) {
 	  var actionTypes = arguments.length <= 1 || arguments[1] === undefined ? null : arguments[1];
 
 	  var actionTypesDict = actionTypes && actionTypes.reduce(function (dict, actionType) {
