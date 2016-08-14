@@ -1,6 +1,6 @@
 {
   "name": "redux-map-action",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Higher-order Redux reducer to map actions before passing to a reducer",
   "main": "lib/index.js",
   "scripts": {
